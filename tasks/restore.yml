@@ -1,0 +1,5 @@
+---
+#For restoring the filesystem
+
+- name: Unarchive the backup tar for restore ...
+  unarchive: src={{ backup_dir }}/{{ ansible_hostname }}-{{ ansible_date_time.date }}-backup.tar.gz dest={{ backup_dir }} copy=no

@@ -19,6 +19,13 @@ backup_dir: "/opt/"
 
 s3_bucket_name: "backupFile"
 
+backup_only: true
+
+restore_only: false
+
+Here when only backup is needs to be done set backup_only as "true" and restore_only as "false" and for restore only backup_only as "false" and 
+restore_only as "false"
+
 Example Playbook
 ----------------
 
