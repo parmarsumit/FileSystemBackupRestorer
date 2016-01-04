@@ -2,10 +2,10 @@
 # tasks file for opstree.backupFile
 
 - name: Creates backup file ...
-  command: cp -r {{ source_file }} {{ backup_file }} 
+  command: cp -r {{ source_file }} {{ backup_dir }}/{{ backup_file }} 
 
 - name: Creates tar of backup file ...
-  command: tar -cvf {{ backup_dir }}/{{ ansible_hostname }}-{{ ansible_date_time.date }}-backup.tar.gz {{ backup_file }}
+  command: tar -cvf {{ backup_dir }}/{{ ansible_hostname }}-{{ ansible_date_time.date }}-backup.tar.gz -C {{ backup_dir }} {{ backup_file }}
 
 - name: upload in s3 bucket ...
   command: aws s3 cp {{ backup_dir }}/{{ ansible_hostname }}-{{ ansible_date_time.date }}:{{ ansible_date_time.time }}-backup.tar.gz s3://{{ s3_bucket_name }}

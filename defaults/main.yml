@@ -1,7 +1,7 @@
 ---
 # defaults file for opstree.backupFile
 source_file: "/tmp/backup"
-backup_file: "/opt/backup"
+backup_file: "backup"
 backup_dir: "/opt/"
 s3_bucket_name: "S3_bucket_name"
 backup_only: true
